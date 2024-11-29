@@ -1,101 +1,134 @@
 import Image from "next/image";
+import Menu from "@/app/components/Menu";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="no-scrollbar">
+      <main className="flex no-scrollbar">
+          <Menu/>
+          <div className="ml-20 mt-4  mt-16 bg-amber-500 no-scrollbar">
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim elit libero, quis mollis est
+                  vehicula sit amet. In hac habitasse platea dictumst. Duis sem diam, mollis at malesuada quis,
+                  sollicitudin a leo. Praesent iaculis, ante nec dignissim congue, odio justo facilisis quam, quis
+                  tincidunt velit tellus at lectus. Ut quis tellus fermentum, ullamcorper dui vitae, laoreet leo.
+                  Integer consequat lorem enim, a tempus ipsum egestas quis. Pellentesque eget urna id magna dictum
+                  eleifend. Mauris vulputate commodo quam, id fringilla lectus pretium ac. Curabitur vitae maximus nunc,
+                  id luctus neque. Duis nec rhoncus purus. Sed mauris elit, tempor ac felis sed, ullamcorper maximus
+                  lorem. Vestibulum convallis odio aliquet aliquam pretium. Nulla facilisi. Vestibulum a arcu id sapien
+                  scelerisque hendrerit.
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+                  Praesent tincidunt gravida nisl, sit amet facilisis quam tincidunt eget. Morbi turpis ligula, maximus
+                  non interdum vitae, ultrices eget arcu. Maecenas feugiat tempus neque, facilisis laoreet felis
+                  ultricies non. Aliquam luctus diam non ultrices cursus. Mauris massa dolor, ornare quis magna quis,
+                  semper pretium erat. Donec in dignissim ipsum. Maecenas maximus convallis tortor, id imperdiet augue
+                  vehicula et. Donec elementum quam non neque pharetra, eu pellentesque lectus consectetur. Quisque
+                  sagittis risus id orci placerat semper. Nunc turpis ex, interdum sagittis hendrerit ac, viverra eu
+                  risus.
+
+                  Donec viverra vitae enim vel pulvinar. Aenean porttitor, justo vel hendrerit gravida, ipsum lorem
+                  imperdiet ex, non bibendum justo tellus id sem. Nunc sed mi risus. In iaculis quam nec metus eleifend,
+                  sed blandit elit mattis. Nam vulputate justo ut commodo sodales. Fusce vel dui ac elit tincidunt
+                  dictum. Nulla et mauris mattis, scelerisque odio id, mattis orci.
+
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget vulputate
+                  ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie at.
+                  Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat, lorem
+                  in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
+                  ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit viverra
+                  tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl id
+                  gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
+                  laoreet tincidunt cursus nec, interdum in justo.
+
+
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget vulputate
+                  ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie at.
+                  Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat, lorem
+                  in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
+                  ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit viverra
+                  tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl id
+                  gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
+                  laoreet tincidunt cursus nec, interdum in justo.
+
+
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget vulputate
+                  ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie at.
+                  Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat, lorem
+                  in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
+                  ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit viverra
+                  tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl id
+                  gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
+                  laoreet tincidunt cursus nec, interdum in justo.
+
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget vulputate
+                  ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie at.
+                  Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat, lorem
+                  in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
+                  ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit viverra
+                  tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl id
+                  gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
+                  laoreet tincidunt cursus nec, interdum in justo.
+
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget vulputate
+                  ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie at.
+                  Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat, lorem
+                  in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
+                  ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit viverra
+                  tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl id
+                  gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
+                  laoreet tincidunt cursus nec, interdum in justo.
+
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget vulputate
+                  ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie at.
+                  Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat, lorem
+                  in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
+                  ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit viverra
+                  tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl id
+                  gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
+                  laoreet tincidunt cursus nec, interdum in justo.
+
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget vulputate
+                  ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie at.
+                  Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat, lorem
+                  in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
+                  ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit viverra
+                  tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl id
+                  gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
+                  laoreet tincidunt cursus nec, interdum in justo.
+
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget vulputate
+                  ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie at.
+                  Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat, lorem
+                  in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
+                  ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit viverra
+                  tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl id
+                  gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
+                  laoreet tincidunt cursus nec, interdum in justo.
+
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget vulputate
+                  ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie at.
+                  Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat, lorem
+                  in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
+                  ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit viverra
+                  tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl id
+                  gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
+                  laoreet tincidunt cursus nec, interdum in justo.
+
+                  Sed facilisis sapien sit amet est sagittis, id luctus sem lacinia. Proin a nibh accumsan diam
+                  convallis accumsan. Fusce tortor erat, aliquam a congue eget, finibus ac ligula. Fusce quis est quis
+                  massa ullamcorper blandit et ac ipsum. Suspendisse potenti. Sed cursus quis arcu et tempor. Nam a
+                  vestibulum risus, eu posuere ligula. Mauris rhoncus nisi at pellentesque dapibus. Duis laoreet euismod
+                  urna, sed lacinia diam accumsan quis. In commodo ipsum ante, quis vulputate purus tincidunt vitae.
+                  Donec auctor, elit placerat rhoncus consectetur, massa augue luctus nisl, vel ullamcorper justo risus
+                  vulputate diam. Proin suscipit aliquet orci nec malesuada. Sed ac ligula convallis, imperdiet ligula
+                  eget, tempus tortor.
+              </p>
+          </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+
+        </footer>
     </div>
   );
 }
+""
