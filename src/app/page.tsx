@@ -1,8 +1,7 @@
 "use client"
 
-import Image from "next/image";
 import Menu from "@/app/components/Menu";
-import Navbar from "@/app/components/NavBar";
+import ContactForm from "@/app/components/ContactForm";
 
 export default function Home() {
   return (
@@ -191,6 +190,8 @@ export default function Home() {
                   </p>
               </section>
               <section id="contato">
+
+                  <ContactForm/>
                   <p>
                       Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget
                       vulputate

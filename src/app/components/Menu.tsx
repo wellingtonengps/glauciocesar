@@ -23,11 +23,14 @@ export default function Menu() {
                 <Link href="/#inicio">
                     Inicio
                 </Link>
-                <Link href="/#trabalhos">
-                    Trabalhos
-                </Link>
                 <Link href="/#sobremim">
                     Sobre mim
+                </Link>
+                <Link href="/#servicos">
+                    Serviços
+                </Link>
+                <Link href="/#projetos">
+                    Projetos
                 </Link>
                 <Link href="/#contato">
                     Contato
@@ -39,6 +42,7 @@ export default function Menu() {
             }}>
                 <IoMenu size={30} />
             </button>
+
             <div
                 className={`fixed h-screen w-60 top-0 right-0 z-30 bg-amber-500 p-3 transition-transform ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
@@ -49,10 +53,20 @@ export default function Menu() {
                 }}>
                     <IoClose size={30}/>
                 </button>
-                <nav className="mt-10 flex flex-col gap-5">
+                <div className="w-full justify-center flex">
+                    <Image
+                        src="/1.png"
+                        width={80}
+                        height={80}
+                        alt="Picture of the author"
+
+                    />
+                </div>
+                <nav className="mt-10 flex flex-col gap-5 items-center">
                     <Link href="/#inicio" onClick={() => setIsOpen(false)}>Inicio</Link>
-                    <Link href="/#trabalhos" onClick={() => setIsOpen(false)}>Trabalhos</Link>
                     <Link href="/#sobremim" onClick={() => setIsOpen(false)}>Sobre mim</Link>
+                    <Link href="/#servicos" onClick={() => setIsOpen(false)}>Serviços</Link>
+                    <Link href="/#projetos" onClick={() => setIsOpen(false)}>Trabalhos</Link>
                     <Link href="/#contato" onClick={() => setIsOpen(false)}>Contato</Link>
                 </nav>
             </div>
