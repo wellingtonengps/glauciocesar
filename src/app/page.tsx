@@ -9,8 +9,8 @@ export default function Home() {
     <div className="no-scrollbar">
       <main className="flex no-scrollbar">
           <Menu/>
-          <Navbar/>
-          <div className="ml-20 bg-amber-500 no-scrollbar">
+
+          <div className="mx-4 md:ml-20 bg-amber-500 no-scrollbar">
               <section id="inicio" className="mt-14">
                   <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim elit libero, quis mollis
