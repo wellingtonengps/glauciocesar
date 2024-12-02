@@ -44,7 +44,7 @@ export default function Menu() {
             </button>
 
             <div
-                className={`fixed h-screen w-60 top-0 right-0 z-30 bg-amber-500 p-3 transition-transform ${
+                className={`fixed h-full w-60 top-0 right-0 z-30 bg-amber-500 p-3 transition-transform ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
             >
