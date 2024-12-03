@@ -63,7 +63,7 @@ export default function Menu() {
                     />
                 </div>
                 <nav className="mt-10 flex flex-col gap-5 items-center">
-                    <Link href="/#inicio" onClick={() => setIsOpen(false)}>Inicio</Link>
+                    <Link href="/#home" onClick={() => setIsOpen(false)}>Home</Link>
                     <Link href="/#sobremim" onClick={() => setIsOpen(false)}>Sobre mim</Link>
                     <Link href="/#servicos" onClick={() => setIsOpen(false)}>Serviços</Link>
                     <Link href="/#projetos" onClick={() => setIsOpen(false)}>Trabalhos</Link>
