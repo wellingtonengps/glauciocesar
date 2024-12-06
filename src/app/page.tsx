@@ -5,6 +5,13 @@ import ContactForm from "@/app/components/ContactForm";
 import Carousel from "@/app/components/Carousel";
 
 export default function Home() {
+
+    const images = [
+        "https://via.placeholder.com/800x400?text=Slide+1",
+        "https://via.placeholder.com/800x400?text=Slide+2",
+        "https://via.placeholder.com/800x400?text=Slide+3",
+    ];
+
   return (
     <div className="no-scrollbar">
       <main className="flex no-scrollbar">
@@ -12,7 +19,7 @@ export default function Home() {
           <div className="mx-4 md:ml-20 bg-amber-500 no-scrollbar">
               <section id="inicio" className="mt-14 bg-blue-500 mb-10">
                   <h1 className="font-bold text-4xl mb-2">Inicio</h1>
-                  <Carousel/>
+                  <Carousel images={images} />
                   <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim elit libero, quis mollis
                       est
