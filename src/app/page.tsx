@@ -3,6 +3,15 @@
 import Menu from "@/app/components/Menu";
 import ContactForm from "@/app/components/ContactForm";
 import Carousel from "@/app/components/Carousel";
+import ServiceCard from "@/app/components/serviceCard";
+import {BsGraphUp, BsGraphUpArrow} from "react-icons/bs";
+import { FaCubesStacked } from "react-icons/fa6";
+import { AiOutlineBarChart } from "react-icons/ai";
+import { RiToolsFill } from "react-icons/ri";
+import { BsGear } from "react-icons/bs";
+import { IoCubeOutline } from "react-icons/io5";
+import React from "react";
+import Range from "@/app/components/Range";
 
 export default function Home() {
 
@@ -16,7 +25,7 @@ export default function Home() {
     <div className="no-scrollbar">
       <main className="flex no-scrollbar">
           <Menu/>
-          <div className="mx-4 md:ml-20 bg-amber-500 no-scrollbar">
+          <div className="mx-4 md:ml-20 no-scrollbar shadow-lg bg-gradient-to-r from-[#313a5c] via-[#5e6686] to-[#aab5dc] bg-opacity-70">
               <section id="inicio" className="mt-14 bg-blue-500 mb-10">
                   <h1 className="font-bold text-4xl mb-2">Inicio</h1>
                   <Carousel images={images} />
@@ -125,69 +134,31 @@ export default function Home() {
                       eget, tempus tortor.
                   </p>
               </section>
-              <section id="servicos" className="mt-14 bg-red-500 mb-10">
-                  <h1 className="font-bold text-4xl">Serviços</h1>
-                  <p>
-                      Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget
-                      vulputate
-                      ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie
-                      at.
-                      Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat,
-                      lorem
-                      in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
-                      ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit
-                      viverra
-                      tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl
-                      id
-                      gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
-                      laoreet tincidunt cursus nec, interdum in justo.
-
-                      Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget
-                      vulputate
-                      ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie
-                      at.
-                      Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat,
-                      lorem
-                      in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
-                      ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit
-                      viverra
-                      tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl
-                      id
-                      gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
-                      laoreet tincidunt cursus nec, interdum in justo.
-
-                      Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget
-                      vulputate
-                      ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie
-                      at.
-                      Cras iaculis consequat accumsan. Duis dapibus tortor viverra nisl volutpat ornare. Nam placerat,
-                      lorem
-                      in semper elementum, quam tellus ultrices neque, vel fringilla elit sem ac mauris. Nullam eget
-                      ullamcorper mi. Nam sollicitudin dignissim nulla, et ornare sem euismod vel. Integer hendrerit
-                      viverra
-                      tincidunt. Sed sit amet leo id justo mattis pharetra nec ut enim. Quisque gravida scelerisque nisl
-                      id
-                      gravida. Fusce porttitor elementum dictum. Aliquam congue tempus urna nec lacinia. Ut nibh leo,
-                      laoreet tincidunt cursus nec, interdum in justo.
-
-                      Sed facilisis sapien sit amet est sagittis, id luctus sem lacinia. Proin a nibh accumsan diam
-                      convallis accumsan. Fusce tortor erat, aliquam a congue eget, finibus ac ligula. Fusce quis est
-                      quis
-                      massa ullamcorper blandit et ac ipsum. Suspendisse potenti. Sed cursus quis arcu et tempor. Nam a
-                      vestibulum risus, eu posuere ligula. Mauris rhoncus nisi at pellentesque dapibus. Duis laoreet
-                      euismod
-                      urna, sed lacinia diam accumsan quis. In commodo ipsum ante, quis vulputate purus tincidunt vitae.
-                      Donec auctor, elit placerat rhoncus consectetur, massa augue luctus nisl, vel ullamcorper justo
-                      risus
-                      vulputate diam. Proin suscipit aliquet orci nec malesuada. Sed ac ligula convallis, imperdiet
-                      ligula
-                      eget, tempus tortor.
-                  </p>
+              <Range/>
+              <section id="servicos" className="mt-14 mb-10">
+                  <h1 className="font-bold text-4xl">Services</h1>
+                  <div  className="flex flex-row gap-10">
+                        <ServiceCard title="Análise de Dados e Relatórios">
+                            <AiOutlineBarChart size={30} className="font-bold"/>
+                        </ServiceCard>
+                      <ServiceCard title="Modelagem e Estruturação de Dados">
+                          <IoCubeOutline size={30} className="font-bold"/>
+                      </ServiceCard>
+                      <ServiceCard title="Consultoria Estratégica em BI">
+                          <BsGraphUpArrow size={30} className="font-bold"/>
+                      </ServiceCard>
+                      <ServiceCard title="Automação de Processos de Relatórios">
+                          <BsGear size={30} className="font-bold"/>
+                      </ServiceCard>
+                      <ServiceCard title="Implementação de Ferramentas de BI">
+                          <RiToolsFill size={30} className="font-bold"/>
+                      </ServiceCard>
+                  </div>
               </section>
               <section id="projetos">
                   <h1 className="font-bold text-4xl">Projetos</h1>
                   <p>
-                      Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget
+                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget
                       vulputate
                       ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie
                       at.
