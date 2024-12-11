@@ -12,6 +12,10 @@ import { BsGear } from "react-icons/bs";
 import { IoCubeOutline } from "react-icons/io5";
 import React from "react";
 import Range from "@/app/components/Range";
+import FAQ from "@/app/components/FAQ";
+import Image from "next/image";
+import Link from "next/link";
+import CustomerReview from "@/app/components/CustomerReview";
 
 export default function Home() {
 
@@ -25,10 +29,11 @@ export default function Home() {
     <div className="no-scrollbar">
       <main className="flex no-scrollbar">
           <Menu/>
-          <div className="mx-4 md:ml-20 no-scrollbar shadow-lg bg-gradient-to-r from-[#313a5c] via-[#5e6686] to-[#aab5dc] bg-opacity-70">
+          <div
+              className="mx-4 md:ml-20 no-scrollbar shadow-lg bg-gradient-to-r from-[#313a5c] via-[#5e6686] to-[#aab5dc] bg-opacity-70">
               <section id="inicio" className="mt-14 bg-blue-500 mb-10">
                   <h1 className="font-bold text-4xl mb-2">Inicio</h1>
-                  <Carousel images={images} />
+                  <Carousel images={images}/>
                   <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim elit libero, quis mollis
                       est
@@ -137,10 +142,10 @@ export default function Home() {
               <Range/>
               <section id="servicos" className="mt-14 mb-10">
                   <h1 className="font-bold text-4xl">Services</h1>
-                  <div  className="flex flex-row gap-10">
-                        <ServiceCard title="Análise de Dados e Relatórios">
-                            <AiOutlineBarChart size={30} className="font-bold"/>
-                        </ServiceCard>
+                  <div className="flex flex-row gap-10">
+                      <ServiceCard title="Análise de Dados e Relatórios">
+                          <AiOutlineBarChart size={30} className="font-bold"/>
+                      </ServiceCard>
                       <ServiceCard title="Modelagem e Estruturação de Dados">
                           <IoCubeOutline size={30} className="font-bold"/>
                       </ServiceCard>
@@ -158,7 +163,7 @@ export default function Home() {
               <section id="projetos">
                   <h1 className="font-bold text-4xl">Projetos</h1>
                   <p>
-                  Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget
+                      Sed scelerisque, augue sit amet malesuada condimentum, lorem magna condimentum lectus, eget
                       vulputate
                       ante ex ut ex. Proin in finibus nunc. Mauris venenatis nisl felis, vel fringilla massa molestie
                       at.
@@ -290,10 +295,139 @@ export default function Home() {
                       eget, tempus tortor.
                   </p>
               </section>
+              <section id="perguntasFrequentes">
+                  <h1 className="font-bold text-4xl">Perguntas Frequentes</h1>
+                  <FAQ/>
+              </section>
+              <section id="avaliacoes" className="mb-10">
+                  <h1 className="font-bold text-4xl ">Clientes e Avaliações</h1>
+                  <div className="flex flex-row justify-center mt-10">
+                      <CustomerReview
+                          review="O serviço foi excelente! Superou minhas expectativas."
+                          name="Maria Silva"
+                          company="TechCorp Solutions"
+                      />
+                      <CustomerReview
+                          review="O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          O serviço foi excelente! Superou minhas expectativas.
+                          "
+                          name="Maria Silva"
+                          company="TechCorp Solutions"
+                      />
+                      <CustomerReview
+                          review="O serviço foi excelente! Superou minhas expectativas."
+                          name="Maria Silva"
+                          company="TechCorp Solutions"
+                      />
+                      <CustomerReview
+                          review="Altamente recomendado! Equipe muito atenciosa e profissional."
+                          name="João Pereira"
+                          company="Finance Plus"
+                      />
+                  </div>
+              </section>
           </div>
       </main>
-        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center h-48 bg-blue-500">
+        <footer className="pl- row-start-3 flex gap-6  items-center justify-center h-64 border-t-2 pt-4">
+            <div className="flex flex-col h-full w-60">
+                <Image
+                    src="/1.png"
+                    width={80}
+                    height={80}
+                    alt="Picture of the author"
+                />
+                <span className="text-sm">
+                A M é uma empresa especializada em serviços de Business Intelligence (BI),
+                que transforma dados em insights estratégicos para impulsionar negócios.
+            </span>
 
+            </div>
+
+            <div className="flex flex-col h-full w-48 pt-2">
+                <span className="font-bold">Institucional</span>
+                <div className="flex flex-col gap-1 mt-4">
+                    <Link
+                        href="/#inicio"
+                        className="group relative inline-block hover:text-blue-700 transition"
+                    >
+                        Inicio
+                        <span
+                            className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-700 transition-all duration-300 group-hover:w-10"></span>
+                    </Link>
+                    <Link
+                        href="/#sobremim"
+                        className="group relative inline-block hover:text-blue-700 transition"
+                    >
+                        Sobre mim
+                        <span
+                            className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-700 transition-all duration-300 group-hover:w-10"></span>
+                    </Link>
+                    <Link
+                        href="/#servicos"
+                        className="group relative inline-block hover:text-blue-700 transition"
+                    >
+                        Serviços
+                        <span
+                            className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-700 transition-all duration-300 group-hover:w-10"></span>
+                    </Link>
+                    <Link
+                        href="/#projetos"
+                        className="group relative inline-block hover:text-blue-700 transition"
+                    >
+                        Projetos
+                        <span
+                            className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-700 transition-all duration-300 group-hover:w-10"></span>
+                    </Link>
+                    <Link
+                        href="/#contato"
+                        className="group relative inline-block hover:text-blue-700 transition"
+                    >
+                        Contato
+                        <span
+                            className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-700 transition-all duration-300 group-hover:w-10"></span>
+                    </Link>
+                </div>
+            </div>
+
+
+            <div className="flex flex-col h-full pt-2">
+                <span className="font-bold">Serviços</span>
+                <div className="flex flex-col gap-1 mt-4">
+                    <Link href="/#inicio">
+                        Análise de Dados e Relatórios
+                    </Link>
+                    <Link href="/#sobremim">
+                        Modelagem e Estruturação de Dados
+                    </Link>
+                    <Link href="/#servicos">
+                        Consultoria Estratégica em BI
+                    </Link>
+                    <Link href="/#projetos">
+                        Automação de Processos de Relatórios
+                    </Link>
+                    <Link href="/#contato">
+                        Implementação de Ferramentas de BI
+                    </Link>
+                </div>
+            </div>
+            <div className="flex flex-col h-full pt-2">
+                <span className="font-bold">Contato</span>
+                <div className="flex flex-col gap-1 mt-4">
+                    <span>Telefone: (33) 999938459</span>
+                    <span>E-mail: wellington.engps@gmail.com</span>
+                </div>
+            </div>
         </footer>
     </div>
   );
