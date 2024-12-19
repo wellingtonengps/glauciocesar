@@ -12,7 +12,7 @@ export default function Menu() {
     }, [isOpen]);
 
     return (
-        <menu className="fixed top-0 left-0 z-50 flex shadow-lg  backdrop-blur-md w-full h-14 flex-row justify-between items-center px-10 md:px-20">
+        <menu className="fixed top-0 left-0 z-50 flex shadow-lg backdrop-blur-md w-full h-14 flex-row justify-between items-center xs:px-10">
             <Image
                 src="/1.png"
                 width={40}
