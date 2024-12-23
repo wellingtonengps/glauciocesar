@@ -6,17 +6,19 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
+import {IoMenu} from "react-icons/io5";
 
 export default function SheetComponent() {
     return (
         <Sheet>
-            <SheetTrigger>Open</SheetTrigger>
+            <SheetTrigger>
+                <IoMenu size={30}/>
+            </SheetTrigger>
             <SheetContent>
                 <SheetHeader>
-                    <SheetTitle>Are you absolutely sure?</SheetTitle>
+                    <SheetTitle></SheetTitle>
                     <SheetDescription>
-                        This action cannot be undone. This will permanently delete your account
-                        and remove your data from our servers.
+
                     </SheetDescription>
                 </SheetHeader>
             </SheetContent>
