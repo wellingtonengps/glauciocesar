@@ -22,7 +22,7 @@ export default function MainComponent() {
         <div className="no-scrollbar">
             <main className="w-full no-scrollbar">
                 <menu
-                    className="fixed top-0 left-0 z-50 flex shadow-lg backdrop-blur-md w-full h-14 flex-row justify-between items-center xs:px-10">
+                    className="fixed top-0 left-0 z-50 flex shadow-lg backdrop-blur-md w-full h-14 flex-row justify-between items-center px-20 max-ms:px-6">
                     <Image
                         src="/1.png"
                         width={40}
