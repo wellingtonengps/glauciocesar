@@ -1,81 +1,119 @@
-import {z} from "zod";
-import {useForm} from "react-hook-form";
-import {zodResolver} from "@hookform/resolvers/zod";
-import Input from "@/app/components/Input";
-import Button from "@/app/components/Button";
+"use client"
 
+import {zodResolver} from "@hookform/resolvers/zod"
+import {useForm} from "react-hook-form"
+import {z} from "zod"
 
-const schema = z.object({
-    email: z.string().email("E-mail inválido"),
-    firstName: z.string().min(3, "Nome é obrigatório"),
-    lastName: z.string().min(3, "Sobrenome é obrigatório"),
-    phone: z.string().min(3, "Telefone obrigatório"),
-    message: z.string().min(3, "Mensagem obrigatória"),
+import {Button} from "@/components/ui/button"
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form"
+import { Textarea } from "@/components/ui/textarea"
+
+import {Input} from "@/components/ui/input"
+import {Card} from "@/components/ui/card";
+
+const formSchema = z.object({
+    name: z.string(),
+    phone: z.number(),
+    email: z.string().email(),
+    message: z.string()
 })
 
-type FormData = z.infer<typeof schema>
+export function ContactForm() {
 
-export default function ContactForm() {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
-        resolver: zodResolver(schema)
-    });
 
-    const onSubmit = (data: FormData) => {
-        console.log(data);
-    };
+
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+    })
+
+    function onSubmit(values: z.infer<typeof formSchema>) {
+        // Do something with the form values.
+        // ✅ This will be type-safe and validated.
+        console.log(values)
+    }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-col bg-emerald-600 p-6 w-80  rounded-lg justify-around">
-                <div className="flex flex-col">
-                     <div className="flex justify-between">
-                         <Input
-                             name="firstName"
-                             placeholder="Nome"
-                             register={register('firstName', { required: 'Nome é obrigatório.' })}
-                             error={errors.firstName}
-                             className="w-32"
-                         />
-
-                         <Input
-                             name="lastName"
-                             placeholder="Sobrenome"
-                             register={register('lastName', { required: 'Sobrenome é obrigatório.' })}
-                             error={errors.lastName}
-                             className="w-32"
-                         />
-                     </div>
-
-
-                    <Input
-                        name="phone"
-                        placeholder="Telefone"
-                        register={register('phone', { required: 'O telefone é obrigatório.' })}
-                        error={errors.phone}
-                        className="w-52 mt-6"
+        <Card className="p-6">
+            <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+                    <FormField
+                        control={form.control}
+                        name="name"
+                        render={({field}) => (
+                            <FormItem>
+                                <FormLabel>Nome</FormLabel>
+                                <FormControl>
+                                    <Input {...field} />
+                                </FormControl>
+                                { /*<FormDescription>
+                                    This is your public display name.
+                                </FormDescription>*/}
+                            </FormItem>
+                        )}
                     />
-
-                    <Input
+                    <FormField
+                        control={form.control}
                         name="email"
-                        placeholder="E-mail"
-                        register={register('email', { required: 'E-mail inválido.' })}
-                        error={errors.email}
-                        className="w-full mt-6"
+                        render={({field}) => (
+                            <FormItem>
+                                <FormLabel>E-mail</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="" {...field} />
+                                </FormControl>
+                                { /*<FormDescription>
+                                    This is your public display name.
+                                </FormDescription>*/}
+                            </FormItem>
+                        )}
                     />
-
-                    <Input
-                        name="mesagem"
-                        placeholder="Mensagem"
-                        register={register('message', { required: 'Mensagem é obrigatória.' })}
-                        error={errors.message}
-                        className="w-full h-40 mt-6"
+                    <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({field}) => (
+                            <FormItem>
+                                <FormLabel>Telefone</FormLabel>
+                                <FormControl>
+                                    <Input {...field} />
+                                </FormControl>
+                                { /*<FormDescription>
+                                    This is your public display name.
+                                </FormDescription>*/}
+                            </FormItem>
+                        )}
                     />
-                </div>
+                    <FormField
+                        control={form.control}
+                        name="message"
+                        render={({field}) => (
+                            <FormItem>
+                                <FormLabel>Menssagem</FormLabel>
+                                <FormControl>
+                                    <Textarea
+                                        {...field}
+                                        rows={3}
+                                        className="resize-none"
+                                    />
+                                </FormControl>
+                                { /*<FormDescription>
+                                    This is your public display name.
+                                </FormDescription>*/}
+                            </FormItem>
+                        )}
+                    />
+                    <div className="flex justify-center">
+                        <Button className="bg-blue-500" type="submit">Enviar</Button>
+                    </div>
 
-                <div className="flex justify-center">
-                    <Button type="submit" variant="primary" className="w-48 mt-4">Enviar</Button>
-                </div>
-            </div>
-        </form>
+                </form>
+            </Form>
+        </Card>
     )
 }

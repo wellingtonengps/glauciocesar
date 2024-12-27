@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import {Separator} from "@/components/ui/separator";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa";
 
 const Title = () => {
     const [text, setText] = useState('');
@@ -33,10 +38,13 @@ const Title = () => {
     }, [text, isDeleting, speed, loopIndex]);
 
     return (
-        <div>
-            <span className="text-4xl font-bold text-center text-gray-800 items-start">Hello,<br/> I'm Gláucio Cesar<br/></span>
+        <div className="justify-items-start">
+            <span
+                className="text-4xl font-bold text-center text-gray-800 items-start">Olá,<br/> Eu sou Gláucio Cesar<br/></span>
             <span className="text-4xl font-bold text-center text-blue-500">{text}</span>
             <span className="text-blue-500 text-4xl">|</span>
+            <h2 className="text-2xl text-gray-700 font-bold mt-8 mb-2">
+                Transformando Dados em Decisões Inteligentes</h2>
         </div>
     );
 };

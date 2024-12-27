@@ -15,8 +15,11 @@ import {IoCubeOutline} from "react-icons/io5";
 import {BsGear, BsGraphUpArrow} from "react-icons/bs";
 import ServiceCard from "@/app/components/serviceCard";
 import {RiToolsFill} from "react-icons/ri";
-import {MessageForm} from "@/app/components/MessageForm";
-import ContactForm from "@/app/components/ContactForm";
+import {ContactForm} from "@/app/components/ContactForm";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator"
+
+
 
 
 export default function Home() {
@@ -26,10 +29,22 @@ export default function Home() {
             <main className="w-full no-scrollbar">
                 <MainComponent/>
                 <div className="p-6 py-20 px-20 max-ms:px-6">
-                    <Title/>
+
+                    <div className="flex flex-wrap gap-10 justify-center items-center">
+                        <Avatar className="flex size-60">
+                            <AvatarImage src="https://github.com/glauciocsilva.png" />
+                            <AvatarFallback>CN</AvatarFallback>
+                        </Avatar>
+                        <Title/>
+                    </div>
 
                     <section className="flex flex-col items-center mb-10 mt-10">
-                        <h1 className="text-2xl text-blue-500">Services</h1>
+                        <div className="w-60 flex flex-row items-center">
+                            <Separator className="mr-2"/>
+                            <h1 className="text-2xl text-blue-500">Serviços</h1>
+                            <Separator className="ml-2"/>
+                        </div>
+
                         <div className="flex flex-wrap mt-10 justify-center gap-10">
                             <Services title="Análise de Dados e Relatórios">
                                 <AiOutlineBarChart size={30} className="font-bold text-blue-500"/>
@@ -68,7 +83,7 @@ export default function Home() {
 
                     <section className="flex flex-col items-center mb-10">
                         <h1 className="text-2xl text-blue-500">Entre em Contato</h1>
-                        <MessageForm/>
+                        <ContactForm/>
                     </section>
 
                     <section className="flex flex-col items-center mb-10">

@@ -24,12 +24,12 @@ export default function CarouselCustom() {
       <Carousel
           plugins={[
               Autoplay({
-                  delay: 4000,
+                  delay: 10000,
               }),
           ]}>
           <CarouselContent>
               <CarouselItem >
-                  <Card>
+                  <Card className="bg-red-400 h-80">
                       <CardHeader>
                           <CardTitle>Card Title</CardTitle>
                           <CardDescription>Card Description</CardDescription>
@@ -43,7 +43,7 @@ export default function CarouselCustom() {
                   </Card>
               </CarouselItem>
               <CarouselItem>
-                  <Card>
+                  <Card  className="bg-red-400 h-80">
                       <CardHeader>
                           <CardTitle>Card Title</CardTitle>
                           <CardDescription>Card Description</CardDescription>
@@ -57,7 +57,7 @@ export default function CarouselCustom() {
                   </Card>
               </CarouselItem>
               <CarouselItem>
-                  <Card>
+                  <Card  className="bg-red-400 h-80">
                       <CardHeader>
                           <CardTitle>Card Title</CardTitle>
                           <CardDescription>Card Description</CardDescription>
