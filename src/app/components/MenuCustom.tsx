@@ -24,24 +24,24 @@ export default function MenuCustom() {
                                 inicio
                             </NavigationMenuLink>
                         </Link>
+                        <Link href="/#servicos" legacyBehavior passHref>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Serviços
+                            </NavigationMenuLink>
+                        </Link>
                         <Link href="/#sobremim" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Sobre mim
                             </NavigationMenuLink>
                         </Link>
-                        <Link href="/#servicos" legacyBehavior passHref>
+                        <Link href="/#contato" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Servicos
+                                Contato
                             </NavigationMenuLink>
                         </Link>
                         <Link href="/#projetos" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Projetos
-                            </NavigationMenuLink>
-                        </Link>
-                        <Link href="/#contato" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Contato
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>

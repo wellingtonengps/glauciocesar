@@ -1,82 +1,33 @@
-import Image from 'next/image';
-import Link from "next/link";
 import {useEffect, useState} from "react";
-import { IoMenu, IoClose } from "react-icons/io5";
+import MenuCustom from "./MenuCustom";
+import FAQAccordion from "./FAQAccordion";
+import SheetComponent from "./SheetComponent";
+import Image from "next/image";
 
 export default function Menu() {
-
-    const [isOpen, setIsOpen] = useState(false);
+    const [isMobileView, setIsMobileView] = useState(false);
 
     useEffect(() => {
-        document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-    }, [isOpen]);
+        const mediaQuery = window.matchMedia("(max-width: 550px)");
+
+        const handleResize = () => setIsMobileView(mediaQuery.matches);
+        handleResize();
+
+        mediaQuery.addEventListener("change", handleResize);
+
+        return () => mediaQuery.removeEventListener("change", handleResize);
+    }, []);
 
     return (
-        <menu className="fixed top-0 left-0 z-50 flex shadow-lg backdrop-blur-md w-full h-14 flex-row justify-between items-center xs:px-10">
+        <menu
+            className="fixed top-0 left-0 z-50 flex shadow-lg backdrop-blur-md w-full h-14 flex-row justify-between items-center  max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
             <Image
                 src="/1.png"
                 width={40}
                 height={40}
                 alt="Picture of the author"
             />
-            <div className="flex-row hidden gap-7 sm:flex">
-                <Link href="/#inicio">
-                    Inicio
-                </Link>
-                <Link href="/#sobremim">
-                    Sobre mim
-                </Link>
-                <Link href="/#servicos">
-                    Serviços
-                </Link>
-                <Link href="/#projetos">
-                    Projetos
-                </Link>
-                <Link href="/#contato">
-                    Contato
-                </Link>
-            </div>
-            <button className="sm:hidden" onClick={() => {
-                setIsOpen(!isOpen)
-                console.log(isOpen)
-            }}>
-                <IoMenu size={30} />
-            </button>
-
-            <div
-                className={`fixed h-full w-60 top-0 right-0 z-30 bg-amber-500 p-3 transition-transform ${
-                    isOpen ? 'translate-x-0' : 'translate-x-full'
-                }`}
-            >
-                <button onClick={() => {
-                    setIsOpen(!isOpen)
-                }}>
-                    <IoClose size={30}/>
-                </button>
-                <div className="w-full justify-center flex">
-                    <Image
-                        src="/1.png"
-                        width={80}
-                        height={80}
-                        alt="Picture of the author"
-
-                    />
-                </div>
-                <nav className="mt-10 flex flex-col gap-5 items-center">
-                    <Link href="/#home" onClick={() => setIsOpen(false)}>Home</Link>
-                    <Link href="/#sobremim" onClick={() => setIsOpen(false)}>Sobre mim</Link>
-                    <Link href="/#servicos" onClick={() => setIsOpen(false)}>Serviços</Link>
-                    <Link href="/#projetos" onClick={() => setIsOpen(false)}>Trabalhos</Link>
-                    <Link href="/#contato" onClick={() => setIsOpen(false)}>Contato</Link>
-                </nav>
-            </div>
-
-            {isOpen && (
-                <div
-                    className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-10"
-                    onClick={() => setIsOpen(false)}
-                />
-            )}
+            {isMobileView ? <SheetComponent/> : <MenuCustom/>}
         </menu>
     );
 }

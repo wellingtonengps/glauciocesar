@@ -9,9 +9,12 @@ export default {
   ],
   theme: {
   	screens: {
-  		xs: '320px',
-  		sm: '375px',
-  		ms: '425px'
+  		'mobile-s': '320px',
+		'mobile-m': '375px',
+  		'mobile-l': '425px',
+		'tablet': '640px',
+		'laptop': '1024px',
+		'desktop': '1280px',
   	},
   	extend: {
   		colors: {

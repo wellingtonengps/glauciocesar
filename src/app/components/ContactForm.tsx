@@ -41,7 +41,7 @@ export function ContactForm() {
     }
 
     return (
-        <Card className="p-6">
+        <Card className="p-6 w-[320px]">
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
                     <FormField
