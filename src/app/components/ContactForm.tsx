@@ -18,6 +18,9 @@ import { Textarea } from "@/components/ui/textarea"
 
 import {Input} from "@/components/ui/input"
 import {Card} from "@/components/ui/card";
+import {FaGithub, FaLinkedin, FaWhatsapp} from "react-icons/fa";
+import React from "react";
+import {Separator} from "@/components/ui/separator";
 
 const formSchema = z.object({
     name: z.string(),
@@ -102,9 +105,6 @@ export function ContactForm() {
                                         className="resize-none"
                                     />
                                 </FormControl>
-                                { /*<FormDescription>
-                                    This is your public display name.
-                                </FormDescription>*/}
                             </FormItem>
                         )}
                     />
@@ -112,6 +112,13 @@ export function ContactForm() {
                         <Button className="bg-blue-500" type="submit">Enviar</Button>
                     </div>
 
+                    <Separator/>
+
+                    <div className="flex mt-5 justify-evenly">
+                        <FaWhatsapp className="size-8 text-[#212833]"/>
+                        <FaLinkedin className="size-8 text-[#212833]"/>
+                        <FaGithub className="size-8 text-[#212833]"/>
+                    </div>
                 </form>
             </Form>
         </Card>

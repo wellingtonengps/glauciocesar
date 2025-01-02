@@ -22,6 +22,7 @@ import {Button} from "@/components/ui/button";
 
 import {GrInfo, GrLineChart} from "react-icons/gr";
 import { TbTargetArrow } from "react-icons/tb";
+import {FaGithub, FaLinkedin, FaWhatsapp} from "react-icons/fa";
 
 
 
@@ -33,7 +34,7 @@ export default function Home() {
                 <Menu/>
                 <div className="">
                     <section className="max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
-                        <div className="pt-20 pb-10 flex flex-wrap gap-10 justify-start items-center">
+                        <div className="pt-20 pb-10 flex flex-wrap gap-10 justify-center max-mobile-l:justify-start items-center">
                             <Avatar className="flex size-60">
                                 <AvatarImage src="https://github.com/glauciocsilva.png"/>
                                 <AvatarFallback>GC</AvatarFallback>
@@ -92,6 +93,14 @@ export default function Home() {
                                 review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
                                 name="João Pereira"
                                 company="Finance Plus"/>
+                            <ReviewCustom
+                                review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
+                                name="João Pereira"
+                                company="Finance Plus"/>
+                            <ReviewCustom
+                                review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
+                                name="João Pereira"
+                                company="Finance Plus"/>
                         </div>
                     </section>
 
@@ -119,15 +128,10 @@ export default function Home() {
                         </div>
                         <ContactForm/>
                     </section>
-
-                    <section className="flex flex-col items-center mb-10">
-                        <h1 className="text-2xl text-blue-500">Perguntas frequentes</h1>
-                        <FAQAccordion/>
-                    </section>
                 </div>
             </main>
-            <footer>
-
+            <footer className="flex w-full justify-center">
+                <span className="text-[10px]">Desenvolvido por Wellington P. Silva - Contato: wellington.engps@gmail.com</span>
             </footer>
         </div>
     );
