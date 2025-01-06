@@ -29,19 +29,14 @@ export default function MenuCustom() {
                                 Serviços
                             </NavigationMenuLink>
                         </Link>
-                        <Link href="/#sobremim" legacyBehavior passHref>
+                        <Link href="/#avaliacoes" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Sobre mim
+                                Avaliações
                             </NavigationMenuLink>
                         </Link>
                         <Link href="/#contato" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Contato
-                            </NavigationMenuLink>
-                        </Link>
-                        <Link href="/#projetos" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Projetos
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>

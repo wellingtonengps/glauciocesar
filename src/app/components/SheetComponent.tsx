@@ -7,6 +7,8 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import {IoMenu} from "react-icons/io5";
+import Link from "next/link";
+
 
 export default function SheetComponent() {
     return (
@@ -16,9 +18,14 @@ export default function SheetComponent() {
             </SheetTrigger>
             <SheetContent>
                 <SheetHeader>
-                    <SheetTitle></SheetTitle>
+                    <SheetTitle>Gláucio Cesar</SheetTitle>
                     <SheetDescription>
-
+                        <div className="flex flex-col">
+                            <Link href="/#inicio">Inicio</Link>
+                            <Link href="/#servicos">Serviços</Link>
+                            <Link href="/#avaliacoes">Avaliações</Link>
+                            <Link href="/#contato">Contatos</Link>
+                        </div>
                     </SheetDescription>
                 </SheetHeader>
             </SheetContent>

@@ -108,13 +108,14 @@ export function ContactForm() {
                             </FormItem>
                         )}
                     />
-                    <div className="flex justify-center">
-                        <Button className="bg-blue-500" type="submit">Enviar</Button>
+
+                    <div className="flex justify-center py-2">
+                        <Button className="bg-blue-500 w-full" type="submit">Enviar</Button>
                     </div>
 
                     <Separator/>
 
-                    <div className="flex mt-5 justify-evenly">
+                    <div className="flex pt-3 justify-evenly">
                         <FaWhatsapp className="size-8 text-[#212833]"/>
                         <FaLinkedin className="size-8 text-[#212833]"/>
                         <FaGithub className="size-8 text-[#212833]"/>

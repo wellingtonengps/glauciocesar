@@ -33,8 +33,8 @@ export default function Home() {
             <main className="w-full no-scrollbar">
                 <Menu/>
                 <div className="">
-                    <section className="max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
-                        <div className="pt-20 pb-10 flex flex-wrap gap-10 justify-center max-mobile-l:justify-start items-center">
+                    <section id="inicio" className="max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
+                        <div className="pt-20 pb-10 flex flex-wrap gap-10 justify-center mobile-l:justify-start items-center">
                             <Avatar className="flex size-60">
                                 <AvatarImage src="https://github.com/glauciocsilva.png"/>
                                 <AvatarFallback>GC</AvatarFallback>
@@ -54,6 +54,7 @@ export default function Home() {
                     </section>
 
                     <section
+                        id="servicos"
                         className="flex flex-col  items-center py-10 mt-10 bg-blue-500 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
                         <h1 className="text-2xl text-white">Serviços</h1>
 
@@ -77,7 +78,7 @@ export default function Home() {
                         </div>
                     </section>
 
-                    <section
+                    <section id="avaliacoes"
                         className="flex flex-col items-center py-10 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
                         <h1 className="text-2xl text-blue-500">Clientes e Avaliações</h1>
 
@@ -104,7 +105,7 @@ export default function Home() {
                         </div>
                     </section>
 
-                    <section className="flex flex-wrap justify-center bg-[#597CB5] items-center py-10 mt-10
+                    <section id="contato" className="flex flex-wrap justify-center bg-[#597CB5] items-center py-10 mt-10
                                            max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
                         <div className="flex-1 text-left mb-10 tablet:mr-5">
                             <h2 className="text-white text-3xl mb-4">Conte me sobre seu próximo projeto</h2>
@@ -126,7 +127,9 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <ContactForm/>
+                        <div>
+                            <ContactForm/>
+                        </div>
                     </section>
                 </div>
             </main>
