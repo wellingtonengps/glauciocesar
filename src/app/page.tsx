@@ -55,7 +55,7 @@ export default function Home() {
 
                     <section
                         id="servicos"
-                        className="flex flex-col  items-center py-10 mt-10 bg-blue-500 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
+                        className="scroll-mt-14 flex flex-col  items-center py-10 mt-10 bg-blue-500 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
                         <h1 className="text-2xl text-white">Serviços</h1>
 
                         <div className="flex flex-wrap mt-10 justify-center gap-10">
@@ -74,12 +74,11 @@ export default function Home() {
                             <Services title="Implementação de Ferramentas de BI">
                                 <RiToolsFill size={30} className="font-bold text-blue-500"/>
                             </Services>
-
                         </div>
                     </section>
 
                     <section id="avaliacoes"
-                        className="flex flex-col items-center py-10 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
+                        className="scroll-mt-14 flex flex-col items-center py-10 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
                         <h1 className="text-2xl text-blue-500">Clientes e Avaliações</h1>
 
                         <div className="flex flex-wrap mt-10 justify-center gap-10">
@@ -105,7 +104,7 @@ export default function Home() {
                         </div>
                     </section>
 
-                    <section id="contato" className="flex flex-wrap justify-center bg-[#597CB5] items-center py-10 mt-10
+                    <section id="contato" className="scroll-mt-14 flex flex-wrap justify-center bg-[#597CB5] items-center py-10 mt-10
                                            max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
                         <div className="flex-1 text-left mb-10 tablet:mr-5">
                             <h2 className="text-white text-3xl mb-4">Conte me sobre seu próximo projeto</h2>
