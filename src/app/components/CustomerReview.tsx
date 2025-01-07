@@ -1,6 +1,7 @@
 import { FaQuoteRight } from "react-icons/fa";
 
-const CustomerReview = ({ review, name, company }) => {
+
+const CustomerReview = (review: string, name: string, company: string) => {
     return (
         <div className="max-w-[280px] mx-auto bg-white shadow-lg rounded-lg p-6 border border-gray-200 min-h-[200px]">
             <div className="flex items-center justify-between">
