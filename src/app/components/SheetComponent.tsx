@@ -9,6 +9,8 @@ import {
 import {IoMenu} from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import React from "react";
 
 
 export default function SheetComponent() {
@@ -17,16 +19,14 @@ export default function SheetComponent() {
             <SheetTrigger>
                 <IoMenu size={30}/>
             </SheetTrigger>
-            <SheetContent className="pt-20 items-center w-[230px]">
+            <SheetContent className="pt-10 items-center w-[230px]">
                 <SheetHeader>
                     <SheetTitle/>
                     <SheetDescription/>
-                    <Image
-                        src="/1.png"
-                        width={80}
-                        height={80}
-                        alt="Picture of the author"
-                    />
+                    <Avatar className="flex size-40">
+                        <AvatarImage src="https://github.com/glauciocsilva.png"/>
+                        <AvatarFallback>GC</AvatarFallback>
+                    </Avatar>
                 </SheetHeader>
                 <div className="flex flex-col gap-3 mt-10">
                     <SheetClose asChild>
