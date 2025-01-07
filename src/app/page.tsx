@@ -21,9 +21,8 @@ import {Separator} from "@/components/ui/separator"
 import {Button} from "@/components/ui/button";
 
 import {GrInfo, GrLineChart} from "react-icons/gr";
-import { TbTargetArrow } from "react-icons/tb";
+import {TbTargetArrow} from "react-icons/tb";
 import {FaGithub, FaLinkedin, FaWhatsapp} from "react-icons/fa";
-
 
 
 export default function Home() {
@@ -34,107 +33,113 @@ export default function Home() {
                 <Menu/>
                 <div className="">
                     <section id="inicio" className="max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
-                        <div className="pt-20 pb-10 flex flex-wrap gap-10 justify-center mobile-l:justify-start items-center">
+                        <div
+                            className="pt-20 pb-10 flex flex-wrap gap-10 justify-center mobile-l:justify-start items-center">
                             <Avatar className="flex size-60">
                                 <AvatarImage src="https://github.com/glauciocsilva.png"/>
                                 <AvatarFallback>GC</AvatarFallback>
                             </Avatar>
                             <Title/>
-
                         </div>
 
-                        <div className="flex flex-wrap  gap-10">
+                        <div className="flex flex-wrap gap-10 justify-center items-center mobile-l:justify-start">
                             <div className="text-[20px]">Transforme dados em decisões estratégicas!
                                 Como analista de dados, ofereço criação de relatórios personalizados,
                                 dashboards interativos em BI, insights com WeKnow e
                                 muito mais para potencializar seus resultados.
                             </div>
-                            <Button className="py-6 bg-[#597CB5] text-1xl">Quero orçamento para projetos</Button>
-                        </div>
-                    </section>
+                            <Button className="py-6 bg-[#597CB5] text-1xl" onClick={() => {
+                                const section = document.getElementById('contato')
+                                if(section){
+                                    section.scrollIntoView({behavior: "smooth"})
+                                }
+                            }}>Quero orçamento para projetos</Button>
+                                </div>
+                                </section>
 
-                    <section
-                        id="servicos"
-                        className="scroll-mt-14 flex flex-col  items-center py-10 mt-10 bg-blue-500 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
-                        <h1 className="text-2xl text-white">Serviços</h1>
+                                <section
+                                id="servicos"
+                                className="scroll-mt-14 flex flex-col  items-center py-10 mt-10 bg-blue-500 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
+                                <h1 className="text-2xl text-white">Serviços</h1>
 
-                        <div className="flex flex-wrap mt-10 justify-center gap-10">
-                            <Services title="Análise de Dados e Relatórios">
+                                <div className="flex flex-wrap mt-10 justify-center gap-10">
+                                <Services title="Análise de Dados e Relatórios">
                                 <AiOutlineBarChart size={30} className="font-bold text-blue-500"/>
-                            </Services>
-                            <Services title="Modelagem e Estruturação de Dados">
-                                <IoCubeOutline size={30} className="font-bold text-blue-500"/>
-                            </Services>
-                            <Services title="Consultoria Estratégica em BI">
-                                <BsGraphUpArrow size={30} className="font-bold text-blue-500"/>
-                            </Services>
-                            <Services title="Automação de Processos de Relatórios">
-                                <BsGear size={30} className="font-bold text-blue-500"/>
-                            </Services>
-                            <Services title="Implementação de Ferramentas de BI">
-                                <RiToolsFill size={30} className="font-bold text-blue-500"/>
-                            </Services>
-                        </div>
-                    </section>
+                        </Services>
+                        <Services title="Modelagem e Estruturação de Dados">
+                            <IoCubeOutline size={30} className="font-bold text-blue-500"/>
+                        </Services>
+                        <Services title="Consultoria Estratégica em BI">
+                            <BsGraphUpArrow size={30} className="font-bold text-blue-500"/>
+                        </Services>
+                        <Services title="Automação de Processos de Relatórios">
+                            <BsGear size={30} className="font-bold text-blue-500"/>
+                        </Services>
+                        <Services title="Implementação de Ferramentas de BI">
+                            <RiToolsFill size={30} className="font-bold text-blue-500"/>
+                        </Services>
+                </div>
+            </section>
 
-                    <section id="avaliacoes"
-                        className="scroll-mt-14 flex flex-col items-center py-10 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
-                        <h1 className="text-2xl text-blue-500">Clientes e Avaliações</h1>
+            <section id="avaliacoes"
+                     className="scroll-mt-14 flex flex-col items-center py-10 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
+                <h1 className="text-2xl text-blue-500">Clientes e Avaliações</h1>
 
-                        <div className="flex flex-wrap mt-10 justify-center gap-10">
-                            <ReviewCustom review="O serviço foi excelente! Superou minhas expectativas."
-                                          name="Maria Silva"
-                                          company="TechCorp Solutions"/>
-                            <ReviewCustom
-                                review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
-                                name="João Pereira"
-                                company="Finance Plus"/>
-                            <ReviewCustom
-                                review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
-                                name="João Pereira"
-                                company="Finance Plus"/>
-                            <ReviewCustom
-                                review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
-                                name="João Pereira"
-                                company="Finance Plus"/>
-                            <ReviewCustom
-                                review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
-                                name="João Pereira"
-                                company="Finance Plus"/>
-                        </div>
-                    </section>
+                <div className="flex flex-wrap mt-10 justify-center gap-10">
+                    <ReviewCustom review="O serviço foi excelente! Superou minhas expectativas."
+                                  name="Maria Silva"
+                                  company="TechCorp Solutions"/>
+                    <ReviewCustom
+                        review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
+                        name="João Pereira"
+                        company="Finance Plus"/>
+                    <ReviewCustom
+                        review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
+                        name="João Pereira"
+                        company="Finance Plus"/>
+                    <ReviewCustom
+                        review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
+                        name="João Pereira"
+                        company="Finance Plus"/>
+                    <ReviewCustom
+                        review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
+                        name="João Pereira"
+                        company="Finance Plus"/>
+                </div>
+            </section>
 
-                    <section id="contato" className="scroll-mt-14 flex flex-wrap justify-center bg-[#597CB5] items-center py-10 mt-10
+            <section id="contato" className="scroll-mt-14 flex flex-wrap justify-center bg-[#597CB5] items-center py-10 mt-10
                                            max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
-                        <div className="flex-1 text-left mb-10 tablet:mr-5">
-                            <h2 className="text-white text-3xl mb-4">Conte me sobre seu próximo projeto</h2>
-                            <span className="text-black text-2xl">
+                <div className="flex-1 text-left mb-10 tablet:mr-5">
+                    <h2 className="text-white text-3xl mb-4">Conte me sobre seu próximo projeto</h2>
+                    <span className="text-black text-2xl">
                                 Estou aqui para ajudar a transformar suas ideias em realidade. Preencha o formulário e vamos criar algo incrível juntos!
                             </span>
-                            <div className="flex flex-wrap justify-center pt-16 gap-10 text-white">
-                                <div className="flex flex-col items-center gap-4">
-                                    <GrLineChart className="size-10"/>
-                                    <span>+ Desempenho</span>
-                                </div>
-                                <div className="flex flex-col items-center gap-4">
-                                    <GrInfo className="size-10"/>
-                                    <span>+ Foco estratégico</span>
-                                </div>
-                                <div className="flex flex-col items-center gap-4">
-                                    <TbTargetArrow className="size-10"/>
-                                    <span>+ Inteligência</span>
-                                </div>
-                            </div>
+                    <div className="flex flex-wrap justify-center pt-16 gap-10 text-white">
+                        <div className="flex flex-col items-center gap-4">
+                            <GrLineChart className="size-10"/>
+                            <span>+ Desempenho</span>
                         </div>
-                        <div>
-                            <ContactForm/>
+                        <div className="flex flex-col items-center gap-4">
+                            <GrInfo className="size-10"/>
+                            <span>+ Foco estratégico</span>
                         </div>
-                    </section>
+                        <div className="flex flex-col items-center gap-4">
+                            <TbTargetArrow className="size-10"/>
+                            <span>+ Inteligência</span>
+                        </div>
+                    </div>
                 </div>
-            </main>
-            <footer className="flex w-full justify-center">
-                <span className="text-[10px]">Desenvolvido por Wellington P. Silva - Contato: wellington.engps@gmail.com</span>
-            </footer>
+                <div>
+                    <ContactForm/>
+                </div>
+            </section>
         </div>
-    );
+</main>
+    <footer className="flex w-full justify-center">
+        <span className="text-[10px]">Desenvolvido por Wellington P. Silva - Contato: wellington.engps@gmail.com</span>
+    </footer>
+</div>
+)
+    ;
 }
