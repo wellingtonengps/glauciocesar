@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import MenuCustom from "./MenuCustom";
-import FAQAccordion from "./FAQAccordion";
 import SheetComponent from "./SheetComponent";
 import Image from "next/image";
 import { LuTrendingUp } from "react-icons/lu";

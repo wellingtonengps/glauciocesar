@@ -119,12 +119,25 @@ export function ContactForm() {
                         <Link href="" passHref>
                             <FaWhatsapp className="size-8 text-[#212833]"/>
                         </Link>
-                        <Link href="https://www.linkedin.com/in/glauciocsilva/" passHref>
-                            <FaLinkedin className="size-8 text-[#212833]"/>
+                        <Link
+                            href={contacts.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center text-[#212833] hover:text-[#597CB5]"
+                            aria-label="LinkedIn Profile"
+                        >
+                            <FaLinkedin className="size-8"/>
                         </Link>
-                        <Link href="https://github.com/Glauciocsilva" passHref>
-                            <FaGithub className="size-8 text-[#212833]"/>
-                        </Link>
+                        <Link
+                            href={contacts.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center text-[#212833] hover:text-[#597CB5]"
+                            aria-label="GitHub Profile"
+                            >
+                        <FaGithub className="size-8"/>
+                    </Link>
+
                     </div>
                 </form>
             </Form>
