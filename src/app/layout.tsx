@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Template",
-  description: "Template for about me website",
+  title: "Gláucio Cesar",
+  description: "Landing page Gláucio Cesar",
 };
 
 export default function RootLayout({

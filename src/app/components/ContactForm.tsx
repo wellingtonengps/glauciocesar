@@ -3,7 +3,7 @@
 import {zodResolver} from "@hookform/resolvers/zod"
 import {useForm} from "react-hook-form"
 import {z} from "zod"
-
+import contacts from '@/data/contacts.json'
 import {Button} from "@/components/ui/button"
 import {
     Form,
@@ -14,13 +14,14 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
-import { Textarea } from "@/components/ui/textarea"
+import {Textarea} from "@/components/ui/textarea"
 
 import {Input} from "@/components/ui/input"
 import {Card} from "@/components/ui/card";
 import {FaGithub, FaLinkedin, FaWhatsapp} from "react-icons/fa";
 import React from "react";
 import {Separator} from "@/components/ui/separator";
+import Link from "next/link";
 
 const formSchema = z.object({
     name: z.string(),
@@ -30,7 +31,6 @@ const formSchema = z.object({
 })
 
 export function ContactForm() {
-
 
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -116,9 +116,15 @@ export function ContactForm() {
                     <Separator/>
 
                     <div className="flex pt-3 justify-evenly">
-                        <FaWhatsapp className="size-8 text-[#212833]"/>
-                        <FaLinkedin className="size-8 text-[#212833]"/>
-                        <FaGithub className="size-8 text-[#212833]"/>
+                        <Link href="" passHref>
+                            <FaWhatsapp className="size-8 text-[#212833]"/>
+                        </Link>
+                        <Link href="https://www.linkedin.com/in/glauciocsilva/" passHref>
+                            <FaLinkedin className="size-8 text-[#212833]"/>
+                        </Link>
+                        <Link href="https://github.com/Glauciocsilva" passHref>
+                            <FaGithub className="size-8 text-[#212833]"/>
+                        </Link>
                     </div>
                 </form>
             </Form>
