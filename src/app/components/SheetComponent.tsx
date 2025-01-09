@@ -30,16 +30,16 @@ export default function SheetComponent() {
                 </SheetHeader>
                 <div className="flex flex-col gap-3 mt-10">
                     <SheetClose asChild>
-                        <Link href="/#inicio" className="text-2xl">Inicio</Link>
+                        <Link href="/#inicio" passHref className="text-2xl">Inicio</Link>
                     </SheetClose>
                     <SheetClose asChild>
-                        <Link href="/#servicos" className="text-2xl">Serviços</Link>
+                        <Link href="/#servicos" passHref className="text-2xl">Serviços</Link>
                     </SheetClose>
                     <SheetClose asChild>
-                        <Link href="/#avaliacoes" className="text-2xl">Avaliações</Link>
+                        <Link href="/#avaliacoes" passHref className="text-2xl">Avaliações</Link>
                     </SheetClose >
                     <SheetClose asChild>
-                        <Link href="/#contato" className="text-2xl">Contatos</Link>
+                        <Link href="/#contato" passHref className="text-2xl">Contatos</Link>
                     </SheetClose>
                 </div>
             </SheetContent>

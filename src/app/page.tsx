@@ -1,29 +1,34 @@
 "use client"
 
 import React from "react";
-import FAQAccordion from "@/app/components/FAQAccordion";
-import SheetComponent from "@/app/components/SheetComponent";
-import MenuCustom from "@/app/components/MenuCustom";
+
 import Menu from "@/app/components/Menu";
-import CarouselCustom from "@/app/components/CarouselCustom";
-import CustomerReview from "@/app/components/CustomerReview";
 import ReviewCustom from "@/app/components/ReviewCustom";
 import Title from "@/app/components/TitleCustom";
 import Services from "@/app/components/Services";
-import {AiOutlineBarChart} from "react-icons/ai";
-import {IoCubeOutline} from "react-icons/io5";
-import {BsGear, BsGraphUpArrow} from "react-icons/bs";
-import ServiceCard from "@/app/components/serviceCard";
-import {RiToolsFill} from "react-icons/ri";
 import {ContactForm} from "@/app/components/ContactForm";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import {Separator} from "@/components/ui/separator"
 import {Button} from "@/components/ui/button";
 
 import {GrInfo, GrLineChart} from "react-icons/gr";
+import {AiOutlineBarChart} from "react-icons/ai";
+import {IoCubeOutline} from "react-icons/io5";
+import {BsGear, BsGraphUpArrow} from "react-icons/bs";
+import {RiToolsFill} from "react-icons/ri";
 import {TbTargetArrow} from "react-icons/tb";
-import {FaGithub, FaLinkedin, FaWhatsapp} from "react-icons/fa";
 
+import services from '@/data/services.json';
+import reviews from '@/data/reviews.json';
+
+import {IconType} from "react-icons";
+
+const iconMap: Record<string, IconType> = {
+    AiOutlineBarChart: AiOutlineBarChart,
+    IoCubeOutline: IoCubeOutline,
+    BsGraphUpArrow: BsGraphUpArrow,
+    BsGear: BsGear,
+    RiToolsFill: RiToolsFill,
+};
 
 export default function Home() {
 
@@ -50,96 +55,79 @@ export default function Home() {
                             </div>
                             <Button className="py-6 bg-[#597CB5] text-1xl" onClick={() => {
                                 const section = document.getElementById('contato')
-                                if(section){
+                                if (section) {
                                     section.scrollIntoView({behavior: "smooth"})
                                 }
                             }}>Quero orçamento para projetos</Button>
-                                </div>
-                                </section>
+                        </div>
+                    </section>
 
-                                <section
-                                id="servicos"
-                                className="scroll-mt-14 flex flex-col  items-center py-10 mt-10 bg-blue-500 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
-                                <h1 className="text-2xl text-white">Serviços</h1>
+                    <section
+                        id="servicos"
+                        className="scroll-mt-14 flex flex-col  items-center py-10 mt-10 bg-blue-500 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
+                        <h1 className="text-2xl text-white">Serviços</h1>
 
-                                <div className="flex flex-wrap mt-10 justify-center gap-10">
-                                <Services title="Análise de Dados e Relatórios">
-                                <AiOutlineBarChart size={30} className="font-bold text-blue-500"/>
-                        </Services>
-                        <Services title="Modelagem e Estruturação de Dados">
-                            <IoCubeOutline size={30} className="font-bold text-blue-500"/>
-                        </Services>
-                        <Services title="Consultoria Estratégica em BI">
-                            <BsGraphUpArrow size={30} className="font-bold text-blue-500"/>
-                        </Services>
-                        <Services title="Automação de Processos de Relatórios">
-                            <BsGear size={30} className="font-bold text-blue-500"/>
-                        </Services>
-                        <Services title="Implementação de Ferramentas de BI">
-                            <RiToolsFill size={30} className="font-bold text-blue-500"/>
-                        </Services>
-                </div>
-            </section>
+                        <div className="flex flex-wrap mt-10 justify-center gap-10">
+                            {services.services.map((service, index) => {
+                                const IconComponent = iconMap[service.icon];
+                                return (
+                                    <Services key={index} title={service.title} description={service.description}>
+                                        <IconComponent size={30} className="font-bold text-blue-500"/>
+                                    </Services>
+                                );
+                            })}
+                        </div>
+                    </section>
 
-            <section id="avaliacoes"
-                     className="scroll-mt-14 flex flex-col items-center py-10 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
-                <h1 className="text-2xl text-blue-500">Clientes e Avaliações</h1>
+                    <section id="avaliacoes"
+                             className="scroll-mt-14 flex flex-col items-center py-10 max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
+                        <h1 className="text-2xl text-blue-500">Clientes e Avaliações</h1>
 
-                <div className="flex flex-wrap mt-10 justify-center gap-10">
-                    <ReviewCustom review="O serviço foi excelente! Superou minhas expectativas."
-                                  name="Maria Silva"
-                                  company="TechCorp Solutions"/>
-                    <ReviewCustom
-                        review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
-                        name="João Pereira"
-                        company="Finance Plus"/>
-                    <ReviewCustom
-                        review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
-                        name="João Pereira"
-                        company="Finance Plus"/>
-                    <ReviewCustom
-                        review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
-                        name="João Pereira"
-                        company="Finance Plus"/>
-                    <ReviewCustom
-                        review="A equipe foi extremamente profissional e entregou o projeto antes do prazo."
-                        name="João Pereira"
-                        company="Finance Plus"/>
-                </div>
-            </section>
+                        <div className="flex flex-wrap mt-10 justify-center gap-10">
+                            {reviews.reviews.map((review, index) => (
+                                <ReviewCustom
+                                    key={index}
+                                    review={review.review}
+                                    name={review.name}
+                                    company={review.company}
+                                />
+                            ))}
+                        </div>
+                    </section>
 
-            <section id="contato" className="scroll-mt-14 flex flex-wrap justify-center bg-[#597CB5] items-center py-10 mt-10
+                    <section id="contato" className="scroll-mt-14 flex flex-wrap justify-center bg-[#597CB5] items-center py-10 mt-10
                                            max-tablet:px-8 tablet:px-10 laptop:px-20 desktop:px-40">
-                <div className="flex-1 text-left mb-10 tablet:mr-5">
-                    <h2 className="text-white text-3xl mb-4">Conte me sobre seu próximo projeto</h2>
-                    <span className="text-black text-2xl">
+                        <div className="flex-1 text-left mb-10 tablet:mr-5">
+                            <h2 className="text-white text-3xl mb-4">Conte me sobre seu próximo projeto</h2>
+                            <span className="text-black text-2xl">
                                 Estou aqui para ajudar a transformar suas ideias em realidade. Preencha o formulário e vamos criar algo incrível juntos!
                             </span>
-                    <div className="flex flex-wrap justify-center pt-16 gap-10 text-white">
-                        <div className="flex flex-col items-center gap-4">
-                            <GrLineChart className="size-10"/>
-                            <span>+ Desempenho</span>
+                            <div className="flex flex-wrap justify-center pt-16 gap-10 text-white">
+                                <div className="flex flex-col items-center gap-4">
+                                    <GrLineChart className="size-10"/>
+                                    <span>+ Desempenho</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-4">
+                                    <GrInfo className="size-10"/>
+                                    <span>+ Foco estratégico</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-4">
+                                    <TbTargetArrow className="size-10"/>
+                                    <span>+ Inteligência</span>
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex flex-col items-center gap-4">
-                            <GrInfo className="size-10"/>
-                            <span>+ Foco estratégico</span>
+                        <div>
+                            <ContactForm/>
                         </div>
-                        <div className="flex flex-col items-center gap-4">
-                            <TbTargetArrow className="size-10"/>
-                            <span>+ Inteligência</span>
-                        </div>
-                    </div>
+                    </section>
                 </div>
-                <div>
-                    <ContactForm/>
-                </div>
-            </section>
+            </main>
+            <footer className="flex w-full justify-center  bg-[#597CB5]">
+                <span
+                    className="text-[10px] text-white">Desenvolvido por Wellington P. Silva - Contato: wellington.engps@gmail.com</span>
+            </footer>
         </div>
-</main>
-    <footer className="flex w-full justify-center">
-        <span className="text-[10px]">Desenvolvido por Wellington P. Silva - Contato: wellington.engps@gmail.com</span>
-    </footer>
-</div>
-)
-    ;
+    )
+        ;
 }

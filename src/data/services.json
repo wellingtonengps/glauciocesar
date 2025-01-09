@@ -1,0 +1,29 @@
+{
+  "services": [
+    {
+      "title": "Análise de Dados e Relatórios",
+      "description": "Transformação de dados brutos em insights valiosos por meio de relatórios precisos e visualizações eficientes.",
+      "icon": "AiOutlineBarChart"
+    },
+    {
+      "title": "Modelagem e Estruturação de Dados",
+      "description": "Criação de estruturas de dados organizadas e otimizadas para facilitar a análise e o armazenamento.",
+      "icon": "IoCubeOutline"
+    },
+    {
+      "title": "Consultoria Estratégica em BI",
+      "description": "Apoio especializado para alinhar a inteligência de negócios às estratégias organizacionais.",
+      "icon": "BsGraphUpArrow"
+    },
+    {
+      "title": "Automatização de Processos de Relatórios",
+      "description": "Eliminação de tarefas manuais por meio de processos automatizados para geração de relatórios.",
+      "icon": "BsGear"
+    },
+    {
+      "title": "Implementação de Ferramentas de BI",
+      "description": "Configuração e customização de ferramentas de Business Intelligence para atender às necessidades específicas do negócio.",
+      "icon": "RiToolsFill"
+    }
+  ]
+}
