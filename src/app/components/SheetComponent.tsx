@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/sheet";
 import {IoMenu} from "react-icons/io5";
 import Link from "next/link";
-import Image from "next/image";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import React from "react";
 
