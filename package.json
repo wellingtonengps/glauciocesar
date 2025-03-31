@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "git add . && git commit -m 'Deploy' && git push origin deploy"
+    "deploy": "next build && git add . && git commit -m 'Deploy' && git push origin deploy"
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
