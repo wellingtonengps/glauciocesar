@@ -1,5 +1,8 @@
+"use client"
+
 import {
-    Sheet, SheetClose,
+    Sheet,
+    SheetClose,
     SheetContent,
     SheetDescription,
     SheetHeader,
@@ -7,12 +10,17 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import {IoMenu} from "react-icons/io5";
-import Link from "next/link";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import React from "react";
 
-
 export default function SheetComponent() {
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <Sheet>
             <SheetTrigger>
@@ -29,20 +37,39 @@ export default function SheetComponent() {
                 </SheetHeader>
                 <div className="flex flex-col gap-3 mt-10">
                     <SheetClose asChild>
-                        <Link href="/#inicio" passHref className="text-2xl">Inicio</Link>
+                        <button
+                            onClick={() => scrollToSection('inicio')}
+                            className="text-2xl text-left"
+                        >
+                            Inicio
+                        </button>
                     </SheetClose>
                     <SheetClose asChild>
-                        <Link href="/#servicos" passHref className="text-2xl">Serviços</Link>
+                        <button
+                            onClick={() => scrollToSection('servicos')}
+                            className="text-2xl text-left"
+                        >
+                            Serviços
+                        </button>
                     </SheetClose>
                     <SheetClose asChild>
-                        <Link href="/#avaliacoes" passHref className="text-2xl">Avaliações</Link>
-                    </SheetClose >
+                        <button
+                            onClick={() => scrollToSection('avaliacoes')}
+                            className="text-2xl text-left"
+                        >
+                            Avaliações
+                        </button>
+                    </SheetClose>
                     <SheetClose asChild>
-                        <Link href="/#contato" passHref className="text-2xl">Contatos</Link>
+                        <button
+                            onClick={() => scrollToSection('contato')}
+                            className="text-2xl text-left"
+                        >
+                            Contatos
+                        </button>
                     </SheetClose>
                 </div>
             </SheetContent>
         </Sheet>
-
     );
 }

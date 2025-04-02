@@ -106,7 +106,7 @@ export function ContactForm() {
                             <FormItem>
                                 <FormLabel>Telefone</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="(XX) XXXXX-XXXX" {...field} />
+                                    <Input placeholder="(xx) xxxxx-xxxx" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
