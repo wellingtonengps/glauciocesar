@@ -21,6 +21,7 @@ import services from '@/data/services.json';
 import reviews from '@/data/reviews.json';
 
 import {IconType} from "react-icons";
+import MapContainer from "@/app/components/Maps";
 
 const iconMap: Record<string, IconType> = {
     AiOutlineBarChart: AiOutlineBarChart,
@@ -120,6 +121,7 @@ export default function Home() {
                         <div>
                             <ContactForm/>
                         </div>
+                        <MapContainer />
                     </section>
                 </div>
             </main>
